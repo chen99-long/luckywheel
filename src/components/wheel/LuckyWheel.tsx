@@ -113,11 +113,13 @@ const LuckyWheel: React.FC<LuckyWheelProps> = ({
     width: size,
     height: size,
     transition: isSpinning ? `transform ${config.spinDuration}s cubic-bezier(0.17, 0.67, 0.35, 0.96)` : 'none',
-    transform: `rotate(${rotation}deg)`
+    transform: `rotate(${rotation}deg)`,
+    transformOrigin: 'center center', // 添加这一行
+    willChange: 'transform', // 添加这一行来优化性能
   };
   
   return (
-    <div className="relative mx-auto" style={{ width: size, height: size }}>
+    <div className="relative mx-auto fixed-container" style={{ width: size, height: size , perspective: '1000px' }}>
       {/* Wheel */}
       <div 
         ref={wheelRef}
