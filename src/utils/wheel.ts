@@ -55,30 +55,29 @@ export const getRandomSegment = (segments: WheelSegment[]): WheelSegment => {
 
 export const calculateRotationAngle = (
   segments: WheelSegment[],
-  selectedSegment: WheelSegment
+  selectedSegment: WheelSegment,
+  currentRotation: number
 ): number => {
-  let totalAngle = 0;
-  let segmentStartAngle = 0;
-
-  // Find the starting angle of the selected segment
-  for (let i = 0; i < segments.length; i++) {
-    if (segments[i].id === selectedSegment.id) {
-      segmentStartAngle = totalAngle;
-      break;
-    }
-    totalAngle += (segments[i].probability / 100) * 360;
-  }
-
-  // Calculate middle angle of the segment
-  const segmentAngle = (selectedSegment.probability / 100) * 360;
-  const middleAngle = segmentStartAngle + segmentAngle / 2;
-
-  // The wheel spins clockwise, so we want the selected segment to end at the top (270 degrees)
-  // Add extra rotations for a more satisfying spin (between 2 and 5 full rotations)
-  const extraRotations = getRandomInt(2, 5) * 360;
-  const targetAngle = 270 - middleAngle;
-
-  return extraRotations + targetAngle;
+  // Find the index of the selected segment
+  const selectedIndex = segments.findIndex(segment => segment.id === selectedSegment.id);
+  
+  // Calculate the angle for each segment
+  const segmentAngle = 360 / segments.length;
+  
+  // Calculate the base angle needed to get the selected segment to the top (270 degrees)
+  const baseAngle = (selectedIndex * segmentAngle + segmentAngle / 2);
+  
+  // Calculate how many degrees we need to rotate to get to the target position
+  const targetAngle = (360 - baseAngle + 270) % 360;
+  
+  // Calculate the minimum rotation needed (including current rotation)
+  const minRotation = Math.floor(currentRotation / 360) * 360;
+  
+  // Add extra full rotations (between 5 and 8)
+  const extraRotations = getRandomInt(5, 8) * 360;
+  
+  // Return the total rotation needed
+  return minRotation + extraRotations + targetAngle;
 };
 
 export const getSegmentColor = (index: number): string => {

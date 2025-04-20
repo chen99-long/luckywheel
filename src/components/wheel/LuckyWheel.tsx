@@ -1,5 +1,5 @@
-import React, { useRef, useState, useEffect } from 'react';
-import { WheelConfig, WheelSegment, SpinResult } from '../../types';
+import React, { useRef, useState } from 'react';
+import { WheelConfig, SpinResult } from '../../types';
 import { calculateAngle, calculateRotationAngle, getRandomSegment, generateRandomId } from '../../utils/wheel';
 import { saveSpinResult } from '../../utils/storage';
 import WheelPointer from './WheelPointer';
@@ -22,7 +22,6 @@ const LuckyWheel: React.FC<LuckyWheelProps> = ({
   const wheelRef = useRef<HTMLDivElement>(null);
   const [rotation, setRotation] = useState<number>(0);
   const [isSpinning, setIsSpinning] = useState<boolean>(false);
-  const [selectedSegment, setSelectedSegment] = useState<WheelSegment | null>(null);
   
   const spinWheel = () => {
     if (isSpinning || disabled) return;
@@ -32,14 +31,12 @@ const LuckyWheel: React.FC<LuckyWheelProps> = ({
     
     // Determine winner based on probabilities
     const winner = getRandomSegment(config.segments);
-    setSelectedSegment(winner);
     
-    // Calculate rotation to land on the winner
-    const targetRotation = calculateRotationAngle(config.segments, winner);
+    // Calculate the new rotation angle based on current rotation
+    const newRotation = calculateRotationAngle(config.segments, winner, rotation);
     
-    // Set the final rotation (current + target)
-    const finalRotation = rotation + targetRotation;
-    setRotation(finalRotation);
+    // Set the new rotation
+    setRotation(newRotation);
     
     // Create spin result
     const result: SpinResult = {
