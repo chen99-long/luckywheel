@@ -1,0 +1,97 @@
+{
+  "common": {
+    "home": "Home",
+    "wheel": "Wheel",
+    "settings": "Settings",
+    "language": "Language",
+    "about": "About",
+    "save": "Save",
+    "cancel": "Cancel"
+  },
+  "landing": {
+    "title": "Welcome to Lucy Wheel",
+    "description": "A fun and interactive wheel game",
+    "start": "Start Game",
+    "features": {
+      "title": "Everything You Need",
+      "design": {
+        "title": "Beautiful Design",
+        "description": "Create stunning wheels with customizable colors, animations, and effects"
+      },
+      "probability": {
+        "title": "Smart Probability",
+        "description": "Control winning chances with our advanced probability system"
+      },
+      "tracking": {
+        "title": "Result Tracking",
+        "description": "Keep track of all spins with detailed statistics and history"
+      }
+    },
+    "useCases": {
+      "title": "Perfect For",
+      "giveaways": {
+        "title": "Giveaways",
+        "description": "Run exciting prize draws and promotions"
+      },
+      "education": {
+        "title": "Education",
+        "description": "Make learning fun and interactive"
+      },
+      "teamBuilding": {
+        "title": "Team Building",
+        "description": "Randomly assign tasks or roles"
+      },
+      "decisionMaking": {
+        "title": "Decision Making",
+        "description": "Let the wheel decide for you"
+      }
+    },
+    "cta": {
+      "title": "Ready to Create Your Wheel?",
+      "description": "Start creating your custom wheel now - it's free and no registration required!",
+      "button": "Get Started"
+    }
+  },
+  "wheel": {
+    "spin": "Spin the Wheel",
+    "result": "Result",
+    "history": "History",
+    "configure": "Configure",
+    "templates": "Templates",
+    "clearHistory": "Clear History",
+    "noHistory": "No spin history yet",
+    "segment": {
+      "add": "Add Segment",
+      "remove": "Remove Segment",
+      "text": "Text",
+      "color": "Color",
+      "probability": "Probability",
+      "edit": "Edit Segment"
+    },
+    "settings": {
+      "title": "Wheel Settings",
+      "style": "Style Settings",
+      "size": "Wheel Size",
+      "speed": "Spin Speed",
+      "duration": "Spin Duration",
+      "sound": "Sound Effects",
+      "background": "Background Color",
+      "border": "Border Color",
+      "textColor": "Text Color",
+      "smart": "Smart",
+      "advanced": "Advanced",
+      "probabilityWarning": "Probabilities don't sum to 100%",
+      "adjust": "Adjust",
+      "preview": "Preview",
+      "pointerColor": "Pointer Color",
+      "borderColor": "Border Color",
+      "borderWidth": "Border Width",
+      "probabilityMode": "Probability Mode",
+      "probability": {
+        "mode": "Probability Mode",
+        "smart": "Smart",
+        "advanced": "Advanced"
+      }
+    }
+  }
+} 

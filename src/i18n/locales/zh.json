@@ -1,0 +1,97 @@
+{
+  "common": {
+    "home": "首页",
+    "wheel": "转盘",
+    "settings": "设置",
+    "language": "语言",
+    "about": "关于",
+    "save": "保存",
+    "cancel": "取消"
+  },
+  "landing": {
+    "title": "欢迎来到 Lucy 转盘",
+    "description": "一个有趣且互动的转盘游戏",
+    "start": "开始游戏",
+    "features": {
+      "title": "您所需的一切",
+      "design": {
+        "title": "精美设计",
+        "description": "使用可自定义的颜色、动画和效果创建令人惊叹的转盘"
+      },
+      "probability": {
+        "title": "智能概率",
+        "description": "通过我们的高级概率系统控制获胜机会"
+      },
+      "tracking": {
+        "title": "结果追踪",
+        "description": "通过详细的统计数据和历史记录追踪所有旋转"
+      }
+    },
+    "useCases": {
+      "title": "完美适用于",
+      "giveaways": {
+        "title": "抽奖活动",
+        "description": "举办激动人心的抽奖和促销活动"
+      },
+      "education": {
+        "title": "教育",
+        "description": "让学习变得有趣和互动"
+      },
+      "teamBuilding": {
+        "title": "团队建设",
+        "description": "随机分配任务或角色"
+      },
+      "decisionMaking": {
+        "title": "决策制定",
+        "description": "让转盘为您做决定"
+      }
+    },
+    "cta": {
+      "title": "准备好创建您的转盘了吗？",
+      "description": "立即开始创建您的自定义转盘 - 完全免费且无需注册！",
+      "button": "开始使用"
+    }
+  },
+  "wheel": {
+    "spin": "转动转盘",
+    "result": "结果",
+    "history": "历史记录",
+    "configure": "配置",
+    "templates": "模板",
+    "clearHistory": "清除历史记录",
+    "noHistory": "暂无旋转历史记录",
+    "segment": {
+      "add": "添加选项",
+      "remove": "删除选项",
+      "text": "选项",
+      "color": "颜色",
+      "probability": "概率",
+      "edit": "编辑选项"
+    },
+    "settings": {
+      "title": "转盘设置",
+      "style": "样式设置",
+      "size": "转盘大小",
+      "speed": "旋转速度",
+      "duration": "旋转时长",
+      "sound": "音效",
+      "background": "背景颜色",
+      "border": "边框颜色",
+      "textColor": "文字颜色",
+      "smart": "智能",
+      "advanced": "高级",
+      "probabilityWarning": "概率总和不为100%",
+      "adjust": "调整",
+      "preview": "预览",
+      "pointerColor": "指针颜色",
+      "borderColor": "边框颜色",
+      "borderWidth": "边框宽度",
+      "probabilityMode": "概率模式",
+      "probability": {
+        "mode": "概率模式",
+        "smart": "智能",
+        "advanced": "高级"
+      }
+    }
+  }
+} 

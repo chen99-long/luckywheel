@@ -7,8 +7,10 @@ import { WheelConfig, SpinResult } from '../types';
 import { createDefaultWheel } from '../utils/templates';
 import { saveWheelConfig, loadWheelConfig, loadSpinHistory, clearSpinHistory } from '../utils/storage';
 import { Sparkles as FileSparkles, Gauge, History } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const Home: React.FC = () => {
+  const { t } = useTranslation();
   const [config, setConfig] = useState<WheelConfig>(createDefaultWheel());
   const [activeTab, setActiveTab] = useState<'config' | 'templates' | 'history'>('config');
   const [spinHistory, setSpinHistory] = useState<SpinResult[]>([]);
@@ -70,7 +72,7 @@ const Home: React.FC = () => {
             {/* Result Notification */}
             {showResult && spinResult && (
               <div className="mt-6 p-4 bg-purple-100 rounded-lg text-center w-full max-w-md animate-fade-in">
-                <h3 className="text-lg font-bold text-purple-800 mb-1">Result</h3>
+                <h3 className="text-lg font-bold text-purple-800 mb-1">{t('wheel.result')}</h3>
                 <p className="text-3xl font-bold text-purple-900">{spinResult.segmentText}</p>
               </div>
             )}
@@ -90,7 +92,7 @@ const Home: React.FC = () => {
               onClick={() => setActiveTab('config')}
             >
               <Gauge className="w-4 h-4 mr-1" />
-              Configure
+              {t('wheel.configure')}
             </button>
             <button
               className={`px-4 py-2 text-sm font-medium flex items-center ${
@@ -101,7 +103,7 @@ const Home: React.FC = () => {
               onClick={() => setActiveTab('templates')}
             >
               <FileSparkles className="w-4 h-4 mr-1" />
-              Templates
+              {t('wheel.templates')}
             </button>
             <button
               className={`px-4 py-2 text-sm font-medium flex items-center ${
@@ -112,7 +114,7 @@ const Home: React.FC = () => {
               onClick={() => setActiveTab('history')}
             >
               <History className="w-4 h-4 mr-1" />
-              History
+              {t('wheel.history')}
             </button>
           </div>
           

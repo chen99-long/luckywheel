@@ -14,6 +14,11 @@ export interface WheelConfig {
   borderWidth: number;
   spinDuration: number;
   fontFamily: string;
+  size: number;
+  speed: number;
+  duration: number;
+  backgroundColor: string;
+  textColor: string;
 }
 
 export interface WheelTemplate {

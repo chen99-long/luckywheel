@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { WheelConfig, WheelSegment, ProbabilityMode } from '../../types';
-import { getSegmentColor, getContrastColor, generateRandomId, distributeEvenProbabilities, adjustProbabilities, validateProbabilities } from '../../utils/wheel';
-import { Settings, Plus, Trash2, RefreshCw, BarChart4 } from 'lucide-react';
+import { getSegmentColor, getContrastColor, generateRandomId, distributeEvenProbabilities, adjustProbabilities } from '../../utils/wheel';
+import { Settings, Plus, Trash2, RefreshCw } from 'lucide-react';
 import SegmentEditor from './SegmentEditor';
+import { useTranslation } from 'react-i18next';
 
 interface ConfigPanelProps {
   config: WheelConfig;
@@ -10,6 +11,7 @@ interface ConfigPanelProps {
 }
 
 const ConfigPanel: React.FC<ConfigPanelProps> = ({ config, onChange }) => {
+  const { t } = useTranslation();
   const [probabilityMode, setProbabilityMode] = useState<ProbabilityMode>('smart');
   const [editingIndex, setEditingIndex] = useState<number | null>(null);
   const [showProbabilityWarning, setShowProbabilityWarning] = useState<boolean>(false);
@@ -110,13 +112,13 @@ const ConfigPanel: React.FC<ConfigPanelProps> = ({ config, onChange }) => {
       <div className="flex items-center justify-between mb-4">
         <h2 className="text-xl font-bold text-purple-800 flex items-center">
           <Settings className="w-5 h-5 mr-2" />
-          Wheel Configuration
+          {t('wheel.settings.title')}
         </h2>
       </div>
       
       {/* Probability Mode Selector */}
       <div className="mb-6">
-        <h3 className="text-sm font-medium text-gray-700 mb-2">Probability Mode</h3>
+        <h3 className="text-sm font-medium text-gray-700 mb-2">{t('wheel.settings.probability.mode')}</h3>
         <div className="flex space-x-2">
           <button
             className={`px-4 py-2 rounded-md text-sm ${
@@ -126,7 +128,7 @@ const ConfigPanel: React.FC<ConfigPanelProps> = ({ config, onChange }) => {
             }`}
             onClick={() => handleProbabilityModeChange('smart')}
           >
-            Smart (Equal)
+            {t('wheel.settings.probability.smart')}
           </button>
           <button
             className={`px-4 py-2 rounded-md text-sm ${
@@ -136,7 +138,7 @@ const ConfigPanel: React.FC<ConfigPanelProps> = ({ config, onChange }) => {
             }`}
             onClick={() => handleProbabilityModeChange('advanced')}
           >
-            Advanced (Manual)
+            {t('wheel.settings.probability.advanced')}
           </button>
         </div>
       </div>
@@ -144,11 +146,11 @@ const ConfigPanel: React.FC<ConfigPanelProps> = ({ config, onChange }) => {
       {/* Segments List */}
       <div className="mb-6">
         <div className="flex justify-between items-center mb-2">
-          <h3 className="text-sm font-medium text-gray-700">Wheel Segments</h3>
+          <h3 className="text-sm font-medium text-gray-700">{t('wheel.segment.text')}</h3>
           <button
             className="p-1 bg-purple-100 text-purple-700 rounded-full hover:bg-purple-200"
             onClick={handleAddSegment}
-            title="Add Segment"
+            title={t('wheel.segment.add')}
             disabled={config.segments.length >= 20}
           >
             <Plus className="w-4 h-4" />
@@ -157,13 +159,13 @@ const ConfigPanel: React.FC<ConfigPanelProps> = ({ config, onChange }) => {
         
         {showProbabilityWarning && (
           <div className="flex justify-between items-center p-2 mb-2 bg-amber-100 text-amber-800 rounded-md text-xs">
-            <span>Probabilities don't sum to 100%. Current sum is {config.segments.reduce((acc, segment) => acc + segment.probability, 0).toFixed(2)}%</span>
+            <span>{t('wheel.settings.probabilityWarning')}</span>
             <button
               className="p-1 bg-amber-200 text-amber-800 rounded-md hover:bg-amber-300 flex items-center"
               onClick={handleAdjustProbabilities}
             >
               <RefreshCw className="w-3 h-3 mr-1" />
-              Fix
+              {t('wheel.settings.adjust')}
             </button>
           </div>
         )}
@@ -215,7 +217,7 @@ const ConfigPanel: React.FC<ConfigPanelProps> = ({ config, onChange }) => {
       <div className="grid grid-cols-2 gap-4 mb-4">
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">
-            Pointer Color
+            {t('wheel.settings.pointerColor')}
           </label>
           <input
             type="color"
@@ -226,7 +228,7 @@ const ConfigPanel: React.FC<ConfigPanelProps> = ({ config, onChange }) => {
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">
-            Border Color
+            {t('wheel.settings.borderColor')}
           </label>
           <input
             type="color"
@@ -240,7 +242,7 @@ const ConfigPanel: React.FC<ConfigPanelProps> = ({ config, onChange }) => {
       <div className="grid grid-cols-2 gap-4">
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">
-            Border Width
+            {t('wheel.settings.borderWidth')}
           </label>
           <input
             type="range"
@@ -255,7 +257,7 @@ const ConfigPanel: React.FC<ConfigPanelProps> = ({ config, onChange }) => {
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">
-            Spin Duration
+            {t('wheel.settings.duration')}
           </label>
           <input
             type="range"

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { WheelSegment, ProbabilityMode } from '../../types';
 import { getContrastColor } from '../../utils/wheel';
 import { X } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 interface SegmentEditorProps {
   segment: WheelSegment;
@@ -16,6 +17,7 @@ const SegmentEditor: React.FC<SegmentEditorProps> = ({
   onCancel,
   probabilityMode
 }) => {
+  const { t } = useTranslation();
   const [text, setText] = useState(segment.text);
   const [color, setColor] = useState(segment.color);
   const [probability, setProbability] = useState(segment.probability.toString());
@@ -46,7 +48,7 @@ const SegmentEditor: React.FC<SegmentEditorProps> = ({
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
       <div className="bg-white rounded-lg shadow-xl w-full max-w-md p-6">
         <div className="flex justify-between items-center mb-4">
-          <h3 className="text-lg font-medium">Edit Segment</h3>
+          <h3 className="text-lg font-medium">{t('wheel.segment.edit')}</h3>
           <button
             className="text-gray-500 hover:text-gray-700"
             onClick={onCancel}
@@ -58,20 +60,20 @@ const SegmentEditor: React.FC<SegmentEditorProps> = ({
         <div className="space-y-4">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
-              Text
+              {t('wheel.segment.text')}
             </label>
             <input
               type="text"
               className="w-full rounded-md border-gray-300 shadow-sm px-4 py-2 border focus:outline-none focus:ring-2 focus:ring-purple-500"
               value={text}
               onChange={(e) => setText(e.target.value)}
-              placeholder="Enter segment text"
+              placeholder={t('wheel.segment.text')}
             />
           </div>
           
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
-              Color
+              {t('wheel.segment.color')}
             </label>
             <div className="flex space-x-2">
               <input
@@ -93,7 +95,7 @@ const SegmentEditor: React.FC<SegmentEditorProps> = ({
           {probabilityMode === 'advanced' && (
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
-                Probability (%)
+                {t('wheel.segment.probability')}
               </label>
               <input
                 type="number"
@@ -105,19 +107,19 @@ const SegmentEditor: React.FC<SegmentEditorProps> = ({
                 step="0.1"
               />
               <p className="text-xs text-gray-500 mt-1">
-                Total of all probabilities should be 100%
+                {t('wheel.settings.probabilityWarning')}
               </p>
             </div>
           )}
           
           <div className="p-3 bg-gray-100 rounded-md">
-            <div className="text-sm mb-2">Preview:</div>
+            <div className="text-sm mb-2">{t('wheel.settings.preview')}</div>
             <div 
               className="p-4 rounded-md flex items-center justify-center"
               style={{ backgroundColor: color }}
             >
               <span style={{ color: getContrastColor(color) }}>
-                {text || 'Text'}
+                {text || t('wheel.segment.text')}
               </span>
             </div>
           </div>
@@ -128,13 +130,13 @@ const SegmentEditor: React.FC<SegmentEditorProps> = ({
             className="px-4 py-2 rounded-md text-gray-700 bg-gray-200 hover:bg-gray-300"
             onClick={onCancel}
           >
-            Cancel
+            {t('common.cancel')}
           </button>
           <button
             className="px-4 py-2 rounded-md text-white bg-purple-600 hover:bg-purple-700"
             onClick={handleSave}
           >
-            Save
+            {t('common.save')}
           </button>
         </div>
       </div>

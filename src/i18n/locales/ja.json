@@ -1,0 +1,97 @@
+{
+  "common": {
+    "home": "ホーム",
+    "wheel": "ルーレット",
+    "settings": "設定",
+    "language": "言語",
+    "about": "概要",
+    "save": "保存",
+    "cancel": "キャンセル"
+  },
+  "landing": {
+    "title": "Lucy ルーレットへようこそ",
+    "description": "楽しくインタラクティブなルーレットゲーム",
+    "start": "ゲーム開始",
+    "features": {
+      "title": "必要な機能がすべて揃っています",
+      "design": {
+        "title": "美しいデザイン",
+        "description": "カスタマイズ可能な色、アニメーション、エフェクトで素晴らしいルーレットを作成"
+      },
+      "probability": {
+        "title": "スマートな確率",
+        "description": "高度な確率システムで当選確率をコントロール"
+      },
+      "tracking": {
+        "title": "結果の追跡",
+        "description": "詳細な統計と履歴で全ての回転を追跡"
+      }
+    },
+    "useCases": {
+      "title": "最適な用途",
+      "giveaways": {
+        "title": "プレゼント企画",
+        "description": "エキサイティングなプレゼント企画やプロモーションを開催"
+      },
+      "education": {
+        "title": "教育",
+        "description": "学習を楽しくインタラクティブに"
+      },
+      "teamBuilding": {
+        "title": "チームビルディング",
+        "description": "タスクや役割をランダムに割り当て"
+      },
+      "decisionMaking": {
+        "title": "意思決定",
+        "description": "ルーレットに決断を任せる"
+      }
+    },
+    "cta": {
+      "title": "ルーレットを作成する準備はできましたか？",
+      "description": "今すぐカスタムルーレットの作成を開始 - 完全無料で登録不要！",
+      "button": "始める"
+    }
+  },
+  "wheel": {
+    "spin": "ルーレットを回す",
+    "result": "結果",
+    "history": "履歴",
+    "configure": "設定",
+    "templates": "テンプレート",
+    "clearHistory": "履歴をクリア",
+    "noHistory": "回転履歴がありません",
+    "segment": {
+      "add": "オプションを追加",
+      "remove": "オプションを削除",
+      "text": "オプション",
+      "color": "色",
+      "probability": "確率",
+      "edit": "オプションを編集"
+    },
+    "settings": {
+      "title": "ルーレット設定",
+      "style": "スタイル設定",
+      "size": "ルーレットサイズ",
+      "speed": "回転速度",
+      "duration": "回転時間",
+      "sound": "サウンド",
+      "background": "背景色",
+      "border": "枠線の色",
+      "textColor": "文字色",
+      "smart": "スマート",
+      "advanced": "詳細",
+      "probabilityWarning": "確率の合計が100%ではありません",
+      "adjust": "調整",
+      "preview": "プレビュー",
+      "pointerColor": "ポインターの色",
+      "borderColor": "枠線の色",
+      "borderWidth": "枠線の太さ",
+      "probabilityMode": "確率モード",
+      "probability": {
+        "mode": "確率モード",
+        "smart": "スマート",
+        "advanced": "詳細"
+      }
+    }
+  }
+} 

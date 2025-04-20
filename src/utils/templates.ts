@@ -23,7 +23,12 @@ export const templates: WheelTemplate[] = [
       borderColor: '#FFFFFF',
       borderWidth: 2,
       spinDuration: 5,
-      fontFamily: 'sans-serif'
+      fontFamily: 'sans-serif',
+      size: 400,
+      speed: 5,
+      duration: 5,
+      backgroundColor: '#FFFFFF',
+      textColor: '#000000'
     }
   },
   {
@@ -47,7 +52,12 @@ export const templates: WheelTemplate[] = [
       borderColor: '#FFFFFF',
       borderWidth: 2,
       spinDuration: 4,
-      fontFamily: 'sans-serif'
+      fontFamily: 'sans-serif',
+      size: 400,
+      speed: 5,
+      duration: 4,
+      backgroundColor: '#FFFFFF',
+      textColor: '#000000'
     }
   },
   {
@@ -68,7 +78,12 @@ export const templates: WheelTemplate[] = [
       borderColor: '#FFFFFF',
       borderWidth: 2,
       spinDuration: 3,
-      fontFamily: 'sans-serif'
+      fontFamily: 'sans-serif',
+      size: 400,
+      speed: 5,
+      duration: 3,
+      backgroundColor: '#FFFFFF',
+      textColor: '#000000'
     }
   },
   {
@@ -88,7 +103,12 @@ export const templates: WheelTemplate[] = [
       borderColor: '#FFFFFF',
       borderWidth: 2,
       spinDuration: 4,
-      fontFamily: 'sans-serif'
+      fontFamily: 'sans-serif',
+      size: 400,
+      speed: 5,
+      duration: 4,
+      backgroundColor: '#FFFFFF',
+      textColor: '#000000'
     }
   }
 ];
@@ -111,7 +131,12 @@ export const createDefaultWheel = () => {
     borderColor: '#FFFFFF',
     borderWidth: 2,
     spinDuration: 5,
-    fontFamily: 'sans-serif'
+    fontFamily: 'sans-serif',
+    size: 400,
+    speed: 5,
+    duration: 5,
+    backgroundColor: '#FFFFFF',
+    textColor: '#000000'
   };
 };
 
