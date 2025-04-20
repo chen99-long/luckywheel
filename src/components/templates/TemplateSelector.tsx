@@ -57,7 +57,7 @@ const TemplateSelector: React.FC<TemplateSelectorProps> = ({ onSelect }) => {
         {Object.entries(templatesByCategory).map(([category, categoryTemplates]) => (
           <div key={category}>
             <h3 className="text-lg font-medium text-gray-800 mb-2">{category}</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 gap-4">
               {categoryTemplates.map((template) => (
                 <div
                   key={template.id}

@@ -1,18 +1,20 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Repeat, Info } from 'lucide-react';
+import logo from "../../../assets/img/logo.png"
 
 const Header: React.FC = () => {
   const location = useLocation();
   const isLandingPage = location.pathname === '/';
 
   return (
-    <header className={`${isLandingPage ? 'bg-transparent' : 'bg-gradient-to-r from-purple-700 to-indigo-800'} text-white shadow-md`}>
+    <header className={`${isLandingPage ? 'bg-[#215557]' : 'bg-gradient-to-r from-purple-700 to-indigo-800'} text-white shadow-md`}>
       <div className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
           <Link to="/" className="flex items-center">
-            <div className="bg-white rounded-full p-2 mr-3">
-              <Repeat className="w-6 h-6 text-purple-700" />
+            <div className="bg-white rounded-full mr-3">
+              {/* <Repeat className="w-6 h-6 text-purple-700" /> */}
+              <img className='w-10 h-10 rounded-full' src={logo} alt="" />
             </div>
             <div>
               <h1 className="text-2xl font-bold tracking-tight">LuckyWheel</h1>
