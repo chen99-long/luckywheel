@@ -1,12 +1,15 @@
 import React from 'react';
 import { WheelTemplate } from '../../types';
 import { templates } from '../../utils/templates';
+import { useTranslation } from 'react-i18next';
 
 interface TemplateSelectorProps {
   onSelect: (template: WheelTemplate) => void;
 }
 
 const TemplateSelector: React.FC<TemplateSelectorProps> = ({ onSelect }) => {
+  const { t } = useTranslation();
+  
   // Group templates by category
   const templatesByCategory = templates.reduce((acc, template) => {
     if (!acc[template.category]) {
@@ -51,12 +54,14 @@ const TemplateSelector: React.FC<TemplateSelectorProps> = ({ onSelect }) => {
   
   return (
     <div className="bg-white rounded-lg shadow-md p-4">
-      <h2 className="text-xl font-bold text-purple-800 mb-4">Template Gallery</h2>
+      <h2 className="text-xl font-bold text-purple-800 mb-4">{t('wheel.templateGallery.title')}</h2>
       
       <div className="space-y-6">
         {Object.entries(templatesByCategory).map(([category, categoryTemplates]) => (
           <div key={category}>
-            <h3 className="text-lg font-medium text-gray-800 mb-2">{category}</h3>
+            <h3 className="text-lg font-medium text-gray-800 mb-2">
+              {t(`wheel.templateGallery.category.${category}`)}
+            </h3>
             <div className="grid grid-cols-1 gap-4">
               {categoryTemplates.map((template) => (
                 <div
@@ -70,8 +75,12 @@ const TemplateSelector: React.FC<TemplateSelectorProps> = ({ onSelect }) => {
                     </div>
                     <div>
                       <h4 className="font-medium text-purple-700">{template.name}</h4>
-                      <p className="text-sm text-gray-600 mt-1">{template.description}</p>
-                      <p className="text-xs text-gray-500 mt-2">{template.config.segments.length} segments</p>
+                      <p className="text-sm text-gray-600 mt-1">
+                        {t(`wheel.templateGallery.description.${category}`)}
+                      </p>
+                      <p className="text-xs text-gray-500 mt-2">
+                        {template.config.segments.length} {t('wheel.templateGallery.segments')}
+                      </p>
                     </div>
                   </div>
                 </div>

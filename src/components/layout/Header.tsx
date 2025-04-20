@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Info } from 'lucide-react';
 import logo from "../../../assets/img/logo.png"
-import LanguageSwitcher from '../LanguageSwitcher';
+// import LanguageSwitcher from '../LanguageSwitcher';
 
 const Header: React.FC = () => {
   const location = useLocation();
@@ -24,7 +24,7 @@ const Header: React.FC = () => {
           </Link>
           
           <div className="flex items-center space-x-4">
-            <LanguageSwitcher />
+            {/* <LanguageSwitcher /> */}
             {!isLandingPage && (
               <Link 
                 to="/"

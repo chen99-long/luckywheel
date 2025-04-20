@@ -92,6 +92,22 @@
         "smart": "Smart",
         "advanced": "Advanced"
       }
+    },
+    "templateGallery": {
+      "title": "Template Gallery",
+      "category": {
+        "Promotion": "Promotion",
+        "Decision": "Decision",
+        "Team": "Team",
+        "Education": "Education"
+      },
+      "description": {
+        "Promotion": "Templates for promotions and giveaways",
+        "Decision": "Help food indecisive people make choices",
+        "Team": "Templates for team task assignment",
+        "Education": "Templates for teaching and learning"
+      },
+      "segments": "segments"
     }
   }
 } 

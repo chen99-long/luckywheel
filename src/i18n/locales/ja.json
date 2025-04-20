@@ -92,6 +92,22 @@
         "smart": "スマート",
         "advanced": "詳細"
       }
+    },
+    "templateGallery": {
+      "title": "テンプレートギャラリー",
+      "category": {
+        "Promotion": "プロモーション",
+        "Decision": "意思決定",
+        "Team": "チーム",
+        "Education": "教育"
+      },
+      "description": {
+        "Promotion": "プロモーションやプレゼント企画に最適なテンプレート",
+        "Decision": "食事を選ぶのが苦手な人に最適なテンプレート",
+        "Team": "チームタスクの割り当てに最適なテンプレート",
+        "Education": "教育と学習に最適なテンプレート"
+      },
+      "segments": "個のオプション"
     }
   }
 } 

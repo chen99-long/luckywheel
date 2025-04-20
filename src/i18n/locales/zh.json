@@ -92,6 +92,22 @@
         "smart": "智能",
         "advanced": "高级"
       }
+    },
+    "templateGallery": {
+      "title": "模板库",
+      "category": {
+        "Promotion": "促销活动",
+        "Decision": "决策选择",
+        "Team": "团队建设",
+        "Education": "教育学习"
+      },
+      "description": {
+        "Promotion": "适合促销和抽奖活动的模板",
+        "Decision": "选择午饭吃什么",
+        "Team": "用于团队任务分配的模板",
+        "Education": "适合教学和学习的模板"
+      },
+      "segments": "个选项"
     }
   }
 } 
