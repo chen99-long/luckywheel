@@ -189,7 +189,7 @@ const ConfigPanel: React.FC<ConfigPanelProps> = ({ config, onChange }) => {
               <div className="flex items-center space-x-2">
                 {probabilityMode === 'advanced' && (
                   <span className="text-xs text-gray-500 w-12 text-right">
-                    {segment.probability}%
+                    {Number(segment.probability).toFixed(2)}%
                   </span>
                 )}
                 
