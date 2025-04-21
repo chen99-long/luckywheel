@@ -9,7 +9,7 @@ const Header: React.FC = () => {
   const isLandingPage = location.pathname === '/';
 
   return (
-    <header className={`${isLandingPage ? 'bg-[#215557]' : 'bg-gradient-to-r from-purple-700 to-indigo-800'} text-white shadow-md`}>
+    <header className={`${isLandingPage ? 'bg-[#1d2f5f]' : 'bg-gradient-to-r from-purple-700 to-indigo-800'} text-white shadow-md`}>
       <div className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
           <Link to="/" className="flex items-center">
